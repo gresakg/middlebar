@@ -13,7 +13,7 @@ new GG_Midlebar();
 
 class GG_Midlebar {
 
-	public $after_paragraph = 1;
+	public $paragraph_offset = 0;
 
 	public $stop_categories = array('pr_novica');
 
@@ -30,11 +30,12 @@ class GG_Midlebar {
 
 		$content = str_replace('</p>', '</p>{{GG}}', $content);
 		$paragraphs = explode('{{GG}}', $content);
-		$n = count($paragraphs);
-		if($n < $this->after_paragraph) {
-			$this->after_paragraph = $n;
+		$n = ceil(count($paragraphs)/2) + $this->paragraph_offset;
+		if($n <= 0) {
+			$n = 1;
 		}
-		$paragraphs[$this->after_paragraph-1] = $paragraphs[$this->after_paragraph-1].$middlebar;
+		//var_dump($paragraphs);
+		$paragraphs[$n-1] = $paragraphs[$n-1].$middlebar;
 
 		$content = implode("", $paragraphs);
 
