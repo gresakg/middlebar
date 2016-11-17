@@ -13,7 +13,6 @@ new GG_Midlebar();
 
 class GG_Midlebar {
 
-	public $paragraph_offset = -99;
 
 	public $stop_categories = array('pr_novica');
 
