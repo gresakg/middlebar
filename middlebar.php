@@ -50,7 +50,7 @@ class GG_Midlebar {
 	 public function customizer($wp_customize) {
         $wp_customize->add_section('middlebar', array(
             'title' => 'Middlebar',
-            'priority' => 10,
+            'priority' => 30,
             ));
         
         $wp_customize->add_setting('middlebar_position', array( "default" => -99));
@@ -61,7 +61,8 @@ class GG_Midlebar {
 				array(
 					'label' => 'Middlebar position',
 					'section' => 'middlebar',
-					'settings' => 'middlebar_position'
+					'settings' => 'middlebar_position',
+					"description" => "Offset from the central position (half of the paragraph count). Set to -99 to appear after the first paragraph", 
 					)
 				)
 			);
