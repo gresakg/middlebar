@@ -14,7 +14,7 @@ new GG_Midlebar();
 class GG_Midlebar {
 
 
-	public $stop_categories = array('pr_novica');
+	public $stop_categories = array();
 
 	public function __construct(){
 		add_action( 'widgets_init', array($this, "widgets_init"),11 );
